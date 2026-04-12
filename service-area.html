@@ -160,15 +160,27 @@ a:hover{color:inherit}
 .quote-modal-sub{font-size:.92rem;color:var(--mid);margin-top:8px;line-height:1.6;max-width:560px}
 .quote-close{appearance:none;background:none;border:none;color:var(--white);font-size:2rem;line-height:1;cursor:pointer;padding:0 4px;transition:opacity .2s,transform .2s;flex-shrink:0}
 .quote-close:hover{opacity:.75;transform:scale(1.04)}
-.quote-form-wrap{padding:0;background:var(--black)}
-.quote-form-embed{display:block;width:100%;height:min(78vh,980px);border:0;background:#fff}
+.quote-form-wrap{padding:22px;background:var(--black)}
+.quote-form{display:block}
+.quote-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.quote-field{display:flex;flex-direction:column;gap:8px}
+.quote-field-full{grid-column:1 / -1}
+.quote-field label{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.quote-field input,.quote-field select,.quote-field textarea{width:100%;background:#0e0e0e;border:1px solid #2a2a2a;color:var(--white);padding:14px 14px;border-radius:2px;font:inherit;transition:border-color .2s,box-shadow .2s}
+.quote-field input::placeholder,.quote-field textarea::placeholder{color:#6d6d6d}
+.quote-field input:focus,.quote-field select:focus,.quote-field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,106,.12)}
+.quote-field textarea{min-height:140px;resize:vertical}
+.quote-form-note{margin:16px 0 18px;color:var(--mid);font-size:.86rem;line-height:1.7}
+.quote-submit{background:var(--gold);color:var(--black);padding:14px 22px;font-family:'Barlow',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s,transform .2s;border:none;cursor:pointer;display:inline-block}
+.quote-submit:hover{background:var(--gold-light);transform:translateY(-2px)}
 @media(max-width:768px){
   .quote-modal{padding:10px;align-items:flex-end}
   .quote-modal-panel{width:100%;max-height:94vh;border-radius:16px 16px 0 0}
   .quote-modal-head{padding:18px 18px 12px}
   .quote-modal-title{font-size:2rem}
   .quote-modal-sub{font-size:.86rem;max-width:none}
-  .quote-form-embed{height:78vh}
+  .quote-form-wrap{padding:18px}
+  .quote-form-grid{grid-template-columns:1fr}
 }
 
 </style>
@@ -386,7 +398,57 @@ a:hover{color:inherit}
       <button class="quote-close" type="button" aria-label="Close quote form" onclick="closeQuoteModal()">&times;</button>
     </div>
     <div class="quote-form-wrap">
-      <iframe class="quote-form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSceJE8iUB-Q8l12AtPgq2LPjqPbLYR3CvrcgN_-ZrK-d4oJ7A/viewform?embedded=true" loading="lazy">Loading…</iframe>
+<form class="quote-form" action="https://formsubmit.co/kswashings@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="New Quote Request - KS Washing">
+  <input type="hidden" name="_next" value="https://kswashing.com/thank-you.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <div class="quote-form-grid">
+    <div class="quote-field">
+      <label for="quote-name">Full Name</label>
+      <input id="quote-name" name="name" type="text" placeholder="Your name" required>
+    </div>
+    <div class="quote-field">
+      <label for="quote-phone">Phone Number</label>
+      <input id="quote-phone" name="phone" type="tel" placeholder="Best number to reach you" required>
+    </div>
+    <div class="quote-field">
+      <label for="quote-email">Email</label>
+      <input id="quote-email" name="email" type="email" placeholder="Optional">
+    </div>
+    <div class="quote-field">
+      <label for="quote-vehicle">Vehicle</label>
+      <input id="quote-vehicle" name="vehicle" type="text" placeholder="Year, make, model" required>
+    </div>
+    <div class="quote-field">
+      <label for="quote-service">Service Interested In</label>
+      <select id="quote-service" name="service" required>
+        <option value="" selected disabled>Select a service</option>
+        <option>Exterior Wash</option>
+        <option>Interior Detail</option>
+        <option>Full Detail</option>
+        <option>Paint Correction</option>
+        <option>Ceramic Coating</option>
+        <option>Not Sure Yet</option>
+      </select>
+    </div>
+    <div class="quote-field">
+      <label for="quote-location">Location</label>
+      <input id="quote-location" name="location" type="text" placeholder="Town / address area" required>
+    </div>
+    <div class="quote-field quote-field-full">
+      <label for="quote-message">Tell me about the vehicle and what you need</label>
+      <textarea id="quote-message" name="message" placeholder="Condition, size, any heavy staining, paint issues, and anything else I should know" required></textarea>
+    </div>
+  </div>
+
+  <div class="quote-form-note">
+    After you submit, you’ll be taken to a confirmation page and I’ll get back to you as soon as possible.
+  </div>
+
+  <button class="quote-submit" type="submit">Submit Quote Request</button>
+</form>
     </div>
   </div>
 </div>

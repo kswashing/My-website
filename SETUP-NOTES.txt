@@ -1,0 +1,21 @@
+KS Washing website form update
+
+What was changed:
+- Replaced the embedded Google Form with a real HTML quote form on all 10 site pages.
+- Form now posts to FormSubmit using: kswashings@gmail.com
+- Form redirects to: https://kswashing.com/thank-you.html
+- Added thank-you.html for Google Ads conversion tracking.
+
+What you still need to do:
+1. Upload all updated files to your website.
+2. Submit the form yourself once.
+3. Check your email and confirm/activate the FormSubmit form.
+4. Paste Gus's global Google tag on every page of the site.
+5. Paste Gus's conversion snippet on thank-you.html only.
+
+Important:
+- If you want submissions sent to a different email, change this in every form action:
+  https://formsubmit.co/kswashings@gmail.com
+- The thank-you page URL in the form is currently:
+  https://kswashing.com/thank-you.html
+  Make sure that exact page exists live on your site.
