@@ -43,7 +43,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(9,9,9,.97);border-bottom:1px solid #252525;transition:padding .3s}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;max-width:1400px;margin:0 auto}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.1em;color:#f0f0f0;text-decoration:none}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
 .nav-logo span{color:#d4af6a}
 .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
 .nav-links>li{position:relative}
@@ -176,14 +176,14 @@ a:hover{color:inherit}
 
 .quote-modal{display:none;position:fixed;inset:0;z-index:1200;background:rgba(9,9,9,.82);backdrop-filter:blur(4px);padding:18px;align-items:center;justify-content:center}
 .quote-modal.open{display:flex}
-.quote-modal-panel{width:min(100%,900px);max-height:min(92vh,980px);background:#111;border:1px solid #252525;box-shadow:0 20px 60px rgba(0,0,0,.55);position:relative;overflow:hidden;border-radius:4px}
+.quote-modal-panel{width:min(100%,900px);max-height:min(92vh,980px);background:#111;border:1px solid #252525;box-shadow:0 20px 60px rgba(0,0,0,.55);position:relative;overflow:hidden;border-radius:4px;display:flex;flex-direction:column}
 .quote-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:20px 22px 14px;border-bottom:1px solid #252525;background:linear-gradient(135deg,rgba(212,175,106,.08),rgba(212,175,106,0))}
 .quote-modal-kicker{font-size:.68rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .quote-modal-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.05em;line-height:1;color:var(--white)}
 .quote-modal-sub{font-size:.92rem;color:var(--mid);margin-top:8px;line-height:1.6;max-width:560px}
 .quote-close{appearance:none;background:none;border:none;color:var(--white);font-size:2rem;line-height:1;cursor:pointer;padding:0 4px;transition:opacity .2s,transform .2s;flex-shrink:0}
 .quote-close:hover{opacity:.75;transform:scale(1.04)}
-.quote-form-wrap{padding:22px;background:var(--black)}
+.quote-form-wrap{padding:22px;background:var(--black);overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch}
 .quote-form{display:block}
 .quote-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .quote-field{display:flex;flex-direction:column;gap:8px}
@@ -198,7 +198,7 @@ a:hover{color:inherit}
 .quote-submit:hover{background:var(--gold-light);transform:translateY(-2px)}
 @media(max-width:768px){
   .quote-modal{padding:10px;align-items:flex-end}
-  .quote-modal-panel{width:100%;max-height:94vh;border-radius:16px 16px 0 0}
+  .quote-modal-panel{width:100%;max-height:94vh;border-radius:16px 16px 0 0;display:flex;flex-direction:column}
   .quote-modal-head{padding:18px 18px 12px}
   .quote-modal-title{font-size:2rem}
   .quote-modal-sub{font-size:.86rem;max-width:none}
@@ -214,7 +214,7 @@ a:hover{color:inherit}
 <body>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="index.html">KS <span>Washing</span></a>
+<a class="nav-logo" href="index.html" style="display:flex;align-items:center;padding:0"><img src="images/ks-logo.png" alt="KS Washing Mobile Detailing" style="height:52px;width:auto;display:block"/></a>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li class="has-dropdown">
