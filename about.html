@@ -41,7 +41,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 
 
 
-nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(9,9,9,.97);border-bottom:1px solid #252525;transition:padding .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bottom:1px solid #252525;transition:padding .3s}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;max-width:1400px;margin:0 auto}
 .nav-logo{text-decoration:none;display:flex;align-items:center}
 .nav-logo span{color:#d4af6a}
@@ -206,6 +206,10 @@ a:hover{color:inherit}
   .quote-form-grid{grid-template-columns:1fr}
 }
 
+
+@media(max-width:600px){
+  .about-photo-grid{grid-template-columns:1fr !important}
+}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
@@ -214,7 +218,7 @@ a:hover{color:inherit}
 <body>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="index.html" style="display:flex;align-items:center;padding:0"><img src="images/ks-logo.png" alt="KS Washing Mobile Detailing" style="height:52px;width:auto;display:block"/></a>
+<a class="nav-logo" href="index.html" style="display:flex;align-items:center;padding:0"><img src="images/ks-logo.png" alt="KS Washing Mobile Detailing" style="height:72px;width:auto;display:block"/></a>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li class="has-dropdown">
@@ -269,7 +273,7 @@ a:hover{color:inherit}
 <p style="color:var(--mid);line-height:1.8;margin-bottom:20px">KS Washing was founded by Kaleb Sherrets with a simple mission — bring professional-grade detailing directly to your driveway. We got into this business because we genuinely love cars and take pride in the results we deliver.</p>
 <p style="color:var(--mid);line-height:1.8;margin-bottom:20px">Based in Independence, Iowa, we serve customers throughout Manchester, Independence, and surrounding communities in Delaware and Buchanan County. Mobile detailing means no more driving somewhere, waiting around, and driving back. We come to you, whether that's your home, your workplace, or anywhere else that works.</p>
 <p style="color:var(--mid);line-height:1.8;margin-bottom:36px">Every vehicle gets our full attention and effort. We don't rush jobs, we don't cut corners, and we don't leave until the work is done right. Your satisfaction is guaranteed.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px">
+<div class="about-photo-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px">
 <img alt="KS Washing setup at job site" loading="lazy" src="images/about-setup-street.jpg" style="width:100%;height:280px;object-fit:cover;border-radius:4px;display:block"/>
 <img alt="KS Washing truck and equipment" loading="lazy" src="images/about-truck-side.jpg" style="width:100%;height:280px;object-fit:cover;border-radius:4px;display:block"/>
 <img alt="KS Washing detailing equipment in truck bed" loading="lazy" src="images/about-bed-closeup.jpg" style="width:100%;height:280px;object-fit:cover;border-radius:4px;display:block"/>
