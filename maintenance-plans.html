@@ -26,8 +26,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--black:#090909;--dark:#111;--card:#181818;--border:#252525;--white:#f0f0f0;--mid:#808080;--accent:#c0c0c0;--gold:#d4af6a;--gold-light:#e8cc90}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;max-width:100vw}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bottom:1px solid #252525;transition:padding .3s}
 .nav-inner{display:flex;align-items:center;justify-content:center;gap:32px;padding:16px 48px;max-width:1400px;margin:0 auto}
@@ -91,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:.05em;color:var(--white);line-height:1.1;margin-bottom:18px}
 .divider{width:48px;height:2px;background:var(--gold);margin:18px 0 24px}
 
-.page-hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:160px 24px 80px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.78)),url('images/maintenance-hero-foam-gmc.jpg') center 38%/cover no-repeat}
+.page-hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:160px 24px 80px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.78)),url('images/maintenance-hero-foam-gmc.jpg') center 60%/cover no-repeat}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,175,106,.08) 0%,transparent 70%)}
 .page-hero-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;text-shadow:0 1px 6px rgba(0,0,0,0.9)}
 .page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:.05em;color:#ffffff;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,0.9),0 0 40px rgba(0,0,0,0.8)}
@@ -181,7 +181,7 @@ a:hover{color:inherit}
 .mobile-overlay{display:none}
 .mobile-overlay.open{display:flex!important}
 @media(min-width:769px){
-  .page-hero{min-height:82vh!important;background-position:center 38%!important}
+  .page-hero{min-height:82vh!important;background-position:center 60%!important}
 }
 </style>
 <link rel="icon" href="favicon.ico" sizes="any"/>
@@ -264,7 +264,7 @@ a:hover{color:inherit}
 <!-- PLAN CARDS -->
 <section style="padding:0 24px 80px;background:var(--black)">
   <div class="section-inner">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--border)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;background:var(--border);overflow:hidden">
 
       <!-- BIWEEKLY -->
       <div class="plan-card reveal">
@@ -361,9 +361,9 @@ a:hover{color:inherit}
       <h2 class="section-title">What Maintained Looks Like</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
-      <div class="reveal"><img src="images/maintenance-hero-buick.jpg" alt="Clean black Buick Enclave exterior detail" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 40%;border-radius:4px;display:block"></div>
-      <div class="reveal"><img src="images/maintenance-interior-highlander.jpg" alt="Clean Toyota Grand Highlander interior detail" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center top;border-radius:4px;display:block"></div>
-      <div class="reveal"><img src="images/maintenance-interior-gmc.jpg" alt="Clean GMC Sierra interior detail" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center top;border-radius:4px;display:block"></div>
+      <div class="reveal"><img src="images/maintenance-hero-buick.jpg" alt="Clean black Buick Enclave exterior detail" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 65%;border-radius:4px;display:block"></div>
+      <div class="reveal"><img src="images/maintenance-interior-highlander.jpg" alt="Clean Toyota Grand Highlander interior detail" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 65%;border-radius:4px;display:block"></div>
+      <div class="reveal"><img src="images/maintenance-interior-gmc.jpg" alt="Clean GMC Sierra interior detail" loading="lazy" style="width:100%;height:320px;object-fit:cover;object-position:center 65%;border-radius:4px;display:block"></div>
     </div>
   </div>
 </section>
