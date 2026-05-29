@@ -42,15 +42,17 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 
 
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bottom:1px solid #252525;transition:padding .3s}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;max-width:1400px;margin:0 auto}
-.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:center;gap:32px;padding:16px 48px;max-width:1400px;margin:0 auto}
+.nav-logo{text-decoration:none;display:flex;align-items:center;margin-right:auto}
 .nav-logo span{color:#d4af6a}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links{display:flex;gap:22px;list-style:none;align-items:center}
 .nav-links>li{position:relative}
-.nav-links a{font-size:.73rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;transition:color .2s}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#f0f0f0}
 .nav-book{background:#d4af6a!important;color:#090909!important;padding:9px 22px;border-radius:2px;font-weight:700!important;white-space:nowrap}
 .nav-book:hover{background:#e8cc90!important}
+.nav-book-online{background:transparent!important;color:#f0f0f0!important;padding:9px 18px;border-radius:2px;font-weight:700!important;white-space:nowrap;border:1px solid rgba(255,255,255,.35)!important}
+.nav-book-online:hover{border-color:#f0f0f0!important}
 .has-dropdown>a::after{content:' ▾';font-size:.6rem;color:#d4af6a}
 .dropdown{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #252525;min-width:220px;z-index:600;box-shadow:0 8px 32px rgba(0,0,0,.6)}
 .dropdown a{display:block;padding:12px 20px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;border-bottom:1px solid #252525}
@@ -62,7 +64,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-/* Mobile overlay - hidden by default */
 .mobile-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#090909;z-index:499;flex-direction:column;align-items:center;justify-content:center;overflow-y:auto;padding:80px 0 40px}
 .mobile-overlay.open{display:flex}
 .mobile-overlay>a,.mob-book{font-size:.9rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#808080;text-decoration:none;padding:16px 0;border-bottom:1px solid #1a1a1a;width:100%;text-align:center}
@@ -77,6 +78,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .mob-book{background:#d4af6a!important;color:#090909!important;font-weight:700!important;margin-top:20px;width:80%;display:block;padding:14px;border-radius:2px;border-bottom:none!important}
 .mob-backdrop{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:498}
 .mob-backdrop.open{display:block}
+@media(max-width:900px){
+  .nav-inner{padding:14px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex;z-index:501}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
 @media(max-width:768px){
   .nav-inner{padding:14px 20px}
   .nav-links{display:none}
@@ -144,18 +152,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 48
 
 
 
-  .nav-links.open{display:flex !important}
-  .nav-links>li{width:100%;text-align:center;border-bottom:1px solid #252525}
-  .nav-links>li:first-child{border-top:1px solid #252525}
-  .nav-links>li>a{display:block;padding:18px 24px;font-size:.85rem;letter-spacing:.15em;color:#f0f0f0 !important}
-  .nav-links>li>a:hover{color:#d4af6a !important}
-  .has-dropdown>a::after{display:none}
-  .dropdown{position:static;transform:none;background:#0d0d0d;border:none;border-top:1px solid #252525;box-shadow:none;min-width:100%;width:100%}
-  .dropdown a{padding:14px 24px;font-size:.75rem;color:#808080 !important;text-align:center;display:block;border-bottom:1px solid #1a1a1a}
-  .dropdown a:last-child{border-bottom:none}
-  .dropdown a:hover{color:#d4af6a !important;background:rgba(212,175,106,.05)}
-  .nav-book{background:#d4af6a !important;color:#090909 !important;margin:24px auto 0;display:inline-block;width:auto;border-radius:2px}
-  .hamburger{display:flex;z-index:201}
   .footer-inner{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
 }
@@ -231,9 +227,11 @@ a:hover{color:inherit}
 <a href="ceramic-coating.html">Ceramic Coating</a>
 </div>
 </li>
+<li><a href="maintenance-plans.html">Maintenance Plans</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="service-area.html">Service Area</a></li>
 <li><a href="contact.html">Contact</a></li>
+<li><a class="nav-book-online" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a></li>
 <li><a class="nav-book" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a></li>
 </ul>
 <button aria-label="Menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -252,6 +250,7 @@ a:hover{color:inherit}
 <a href="paint-correction.html">Paint Correction</a>
 <a href="ceramic-coating.html">Ceramic Coating</a>
 </div>
+<a href="maintenance-plans.html">Maintenance Plans</a>
 <a href="about.html">About</a>
 <a href="service-area.html">Service Area</a>
 <a href="contact.html">Contact</a>
@@ -316,6 +315,18 @@ a:hover{color:inherit}
 <div style="text-align:center;margin-top:40px"><a class="btn-outline" href="https://share.google/4xKiAyokHw1ahY2xF" target="_blank">Read All 60+ Google Reviews</a></div>
 </div>
 </section>
+<section style="background:linear-gradient(135deg,#0f0f0f 0%,#1a1500 100%);padding:80px 24px;text-align:center;border-top:1px solid var(--border)">
+  <div class="section-inner">
+    <p class="section-label">Ready to Book?</p>
+    <h2 class="section-title">Get Your Vehicle Detailed Today</h2>
+    <p style="color:var(--mid);max-width:500px;margin:0 auto 36px;font-size:1rem;line-height:1.7">We come to you. All we need is a water spigot and an outlet.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://book.sproutcoapp.com/mp8e81" target="_blank" class="btn-primary">Book Online</a>
+      <a href="#" onclick="openQuoteModal(); return false;" class="btn-outline">Get A Free Quote</a>
+      <a href="tel:3193277939" class="btn-outline">Call (319) 327-7939</a>
+    </div>
+  </div>
+</section>
 <footer>
 <div class="footer-inner">
 <div>
@@ -338,6 +349,7 @@ a:hover{color:inherit}
 <li><a href="full-detail.html">Full Detail</a></li>
 <li><a href="paint-correction.html">Paint Correction</a></li>
 <li><a href="ceramic-coating.html">Ceramic Coating</a></li>
+<li><a href="maintenance-plans.html">Maintenance Plans</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -403,7 +415,7 @@ a:hover{color:inherit}
       <label for="quote-service">Service Interested In</label>
       <select id="quote-service" name="service" required>
         <option value="" selected disabled>Select a service</option>
-        <option>Exterior Wash</option>
+        <option>Decon Wash &amp; Wax</option>
         <option>Interior Detail</option>
         <option>Full Detail</option>
         <option>Paint Correction</option>

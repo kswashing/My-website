@@ -41,15 +41,17 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 
 
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bottom:1px solid #252525;transition:padding .3s}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;max-width:1400px;margin:0 auto}
-.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:center;gap:32px;padding:16px 48px;max-width:1400px;margin:0 auto}
+.nav-logo{text-decoration:none;display:flex;align-items:center;margin-right:auto}
 .nav-logo span{color:#d4af6a}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links{display:flex;gap:22px;list-style:none;align-items:center}
 .nav-links>li{position:relative}
-.nav-links a{font-size:.73rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;transition:color .2s}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#f0f0f0}
 .nav-book{background:#d4af6a!important;color:#090909!important;padding:9px 22px;border-radius:2px;font-weight:700!important;white-space:nowrap}
 .nav-book:hover{background:#e8cc90!important}
+.nav-book-online{background:transparent!important;color:#f0f0f0!important;padding:9px 18px;border-radius:2px;font-weight:700!important;white-space:nowrap;border:1px solid rgba(255,255,255,.35)!important}
+.nav-book-online:hover{border-color:#f0f0f0!important}
 .has-dropdown>a::after{content:' ▾';font-size:.6rem;color:#d4af6a}
 .dropdown{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #252525;min-width:220px;z-index:600;box-shadow:0 8px 32px rgba(0,0,0,.6)}
 .dropdown a{display:block;padding:12px 20px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;border-bottom:1px solid #252525}
@@ -61,7 +63,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-/* Mobile overlay - hidden by default */
 .mobile-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#090909;z-index:499;flex-direction:column;align-items:center;justify-content:center;overflow-y:auto;padding:80px 0 40px}
 .mobile-overlay.open{display:flex}
 .mobile-overlay>a,.mob-book{font-size:.9rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#808080;text-decoration:none;padding:16px 0;border-bottom:1px solid #1a1a1a;width:100%;text-align:center}
@@ -76,6 +77,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .mob-book{background:#d4af6a!important;color:#090909!important;font-weight:700!important;margin-top:20px;width:80%;display:block;padding:14px;border-radius:2px;border-bottom:none!important}
 .mob-backdrop{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:498}
 .mob-backdrop.open{display:block}
+@media(max-width:900px){
+  .nav-inner{padding:14px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex;z-index:501}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
 @media(max-width:768px){
   .nav-inner{padding:14px 20px}
   .nav-links{display:none}
@@ -143,18 +151,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 48
 
 
 
-  .nav-links.open{display:flex !important}
-  .nav-links>li{width:100%;text-align:center;border-bottom:1px solid #252525}
-  .nav-links>li:first-child{border-top:1px solid #252525}
-  .nav-links>li>a{display:block;padding:18px 24px;font-size:.85rem;letter-spacing:.15em;color:#f0f0f0 !important}
-  .nav-links>li>a:hover{color:#d4af6a !important}
-  .has-dropdown>a::after{display:none}
-  .dropdown{position:static;transform:none;background:#0d0d0d;border:none;border-top:1px solid #252525;box-shadow:none;min-width:100%;width:100%}
-  .dropdown a{padding:14px 24px;font-size:.75rem;color:#808080 !important;text-align:center;display:block;border-bottom:1px solid #1a1a1a}
-  .dropdown a:last-child{border-bottom:none}
-  .dropdown a:hover{color:#d4af6a !important;background:rgba(212,175,106,.05)}
-  .nav-book{background:#d4af6a !important;color:#090909 !important;margin:24px auto 0;display:inline-block;width:auto;border-radius:2px}
-  .hamburger{display:flex;z-index:201}
   .footer-inner{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
 }
@@ -270,9 +266,11 @@ a:hover{color:inherit}
 <a href="ceramic-coating.html">Ceramic Coating</a>
 </div>
 </li>
+<li><a href="maintenance-plans.html">Maintenance Plans</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="service-area.html">Service Area</a></li>
 <li><a href="contact.html">Contact</a></li>
+<li><a class="nav-book-online" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a></li>
 <li><a class="nav-book" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a></li>
 </ul>
 <button aria-label="Menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -291,6 +289,7 @@ a:hover{color:inherit}
 <a href="paint-correction.html">Paint Correction</a>
 <a href="ceramic-coating.html">Ceramic Coating</a>
 </div>
+<a href="maintenance-plans.html">Maintenance Plans</a>
 <a href="about.html">About</a>
 <a href="service-area.html">Service Area</a>
 <a href="contact.html">Contact</a>
@@ -303,9 +302,12 @@ a:hover{color:inherit}
 <p style="font-size:.7rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;opacity:0;animation:fadeUp .8s .2s forwards">Independence &amp; Manchester, Iowa</p>
 <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,10vw,8rem);letter-spacing:.05em;color:#ffffff;line-height:1;margin-bottom:24px;opacity:0;animation:fadeUp .8s .4s forwards;text-shadow:0 2px 12px rgba(0,0,0,0.9),0 0 40px rgba(0,0,0,0.8)">Mobile Auto<br/><span style="color:var(--gold)">Detailing</span></h1>
 <p style="font-size:1.05rem;color:#ffffff;max-width:620px;margin:0 auto 40px;line-height:1.7;opacity:0;animation:fadeUp .8s .6s forwards;text-shadow:0 1px 8px rgba(0,0,0,0.95)"><span style="display:block">Professional paint correction, ceramic coating, and mobile detailing</span><span style="display:block;margin-top:6px">Independence, Manchester, and surrounding areas</span><span style="display:block;margin-top:6px">⭐ 60+ 5-Star Reviews — Trusted Local Service</span></p>
-<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards">
-<a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
 <a class="btn-outline" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
+<a class="btn-outline" href="tel:3193277939">Call (319) 327-7939</a>
+</div>
+<a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank" style="padding:14px 60px">Book Online</a>
 </div>
 <div style="display:flex;gap:40px;justify-content:center;margin-top:56px;opacity:0;animation:fadeUp .8s 1s forwards;flex-wrap:wrap">
 <div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold)">5.0★</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)">Google Rating</div></div>
@@ -357,11 +359,11 @@ a:hover{color:inherit}
 <h2 class="section-title">Our Services</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--border)">
-<a href="exterior-wash.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🚗</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $80</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Exterior Wash</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Hand wash, wheel cleaning, tire dressing, and window cleaning.</p></a>
+<a href="exterior-wash.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🚗</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $130</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Decon Wash &amp; Wax</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Hand wash, wheel cleaning, tire dressing, and window cleaning.</p></a>
 <a href="interior-detailing.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">✨</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $175</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Interior Detail</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Deep vacuum, carpet shampoo, stain removal, and odor elimination.</p></a>
 <a href="full-detail.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;position:relative;transition:border-color .2s"><div style="position:absolute;top:16px;right:16px;background:var(--gold);color:var(--black);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:1px">Best Value</div><div style="font-size:1.8rem;margin-bottom:14px">💎</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $235</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Full Detail</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Complete inside and out. Interior detail plus exterior hand wash.</p></a>
 <a href="paint-correction.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🔄</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $499</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Paint Correction</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Remove swirl marks, scratches, and oxidation.</p></a>
-<a href="ceramic-coating.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🛡️</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $300</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Ceramic Coating</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Long-lasting hydrophobic paint protection.</p></a>
+<a href="ceramic-coating.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🛡️</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $799</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Ceramic Coating</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Paint correction + Gyeon Mohs 3-year coating packages.</p></a>
 </div>
 </div>
 </section>
@@ -409,6 +411,7 @@ a:hover{color:inherit}
 <li><a href="full-detail.html">Full Detail</a></li>
 <li><a href="paint-correction.html">Paint Correction</a></li>
 <li><a href="ceramic-coating.html">Ceramic Coating</a></li>
+<li><a href="maintenance-plans.html">Maintenance Plans</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -474,7 +477,7 @@ a:hover{color:inherit}
       <label for="quote-service">Service Interested In</label>
       <select id="quote-service" name="service" required>
         <option value="" selected disabled>Select a service</option>
-        <option>Exterior Wash</option>
+        <option>Decon Wash &amp; Wax</option>
         <option>Interior Detail</option>
         <option>Full Detail</option>
         <option>Paint Correction</option>

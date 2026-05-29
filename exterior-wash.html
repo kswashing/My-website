@@ -16,15 +16,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Exterior Car Wash - Independence &amp; Manchester, IA | KS Washing</title>
-<meta content="Professional mobile exterior car wash in Independence and Manchester, Iowa. Hand wash, wheel cleaning, and wax. Starting at $80. Call (319) 327-7939." name="description"/>
+<meta content="Professional mobile decon wash and wax in Independence and Manchester, Iowa. Full decontamination wash, clay bar, and spray wax. Starting at $130. Call (319) 327-7939." name="description"/>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kswashing.com/exterior-wash.html">
 <meta property="og:title" content="Exterior Car Wash - Independence & Manchester, IA | KS Washing">
-<meta property="og:description" content="Professional mobile exterior car wash in Independence and Manchester, Iowa. Hand wash, wheel cleaning, tire dressing, and window cleaning. Starting at $80.">
+<meta property="og:description" content="Professional mobile decon wash and wax in Independence and Manchester, Iowa. Full decon wash, clay bar treatment, and spray wax. Starting at $130.">
 <meta property="og:image" content="https://kswashing.com/images/index-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Exterior Car Wash - Independence & Manchester, IA | KS Washing">
-<meta name="twitter:description" content="Professional mobile exterior car wash in Independence and Manchester, Iowa. Hand wash, wheel cleaning, tire dressing, and window cleaning. Starting at $80.">
+<meta name="twitter:description" content="Professional mobile decon wash and wax in Independence and Manchester, Iowa. Full decon wash, clay bar treatment, and spray wax. Starting at $130.">
 <meta name="twitter:image" content="https://kswashing.com/images/index-hero.jpg">
 <link rel="canonical" href="https://kswashing.com/exterior-wash.html">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -41,15 +41,17 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 
 
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bottom:1px solid #252525;transition:padding .3s}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;max-width:1400px;margin:0 auto}
-.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:center;gap:32px;padding:16px 48px;max-width:1400px;margin:0 auto}
+.nav-logo{text-decoration:none;display:flex;align-items:center;margin-right:auto}
 .nav-logo span{color:#d4af6a}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links{display:flex;gap:22px;list-style:none;align-items:center}
 .nav-links>li{position:relative}
-.nav-links a{font-size:.73rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;transition:color .2s}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#f0f0f0}
 .nav-book{background:#d4af6a!important;color:#090909!important;padding:9px 22px;border-radius:2px;font-weight:700!important;white-space:nowrap}
 .nav-book:hover{background:#e8cc90!important}
+.nav-book-online{background:transparent!important;color:#f0f0f0!important;padding:9px 18px;border-radius:2px;font-weight:700!important;white-space:nowrap;border:1px solid rgba(255,255,255,.35)!important}
+.nav-book-online:hover{border-color:#f0f0f0!important}
 .has-dropdown>a::after{content:' ▾';font-size:.6rem;color:#d4af6a}
 .dropdown{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #252525;min-width:220px;z-index:600;box-shadow:0 8px 32px rgba(0,0,0,.6)}
 .dropdown a{display:block;padding:12px 20px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;border-bottom:1px solid #252525}
@@ -61,7 +63,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-/* Mobile overlay - hidden by default */
 .mobile-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#090909;z-index:499;flex-direction:column;align-items:center;justify-content:center;overflow-y:auto;padding:80px 0 40px}
 .mobile-overlay.open{display:flex}
 .mobile-overlay>a,.mob-book{font-size:.9rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#808080;text-decoration:none;padding:16px 0;border-bottom:1px solid #1a1a1a;width:100%;text-align:center}
@@ -76,6 +77,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .mob-book{background:#d4af6a!important;color:#090909!important;font-weight:700!important;margin-top:20px;width:80%;display:block;padding:14px;border-radius:2px;border-bottom:none!important}
 .mob-backdrop{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:498}
 .mob-backdrop.open{display:block}
+@media(max-width:900px){
+  .nav-inner{padding:14px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex;z-index:501}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
 @media(max-width:768px){
   .nav-inner{padding:14px 20px}
   .nav-links{display:none}
@@ -143,18 +151,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 48
 
 
 
-  .nav-links.open{display:flex !important}
-  .nav-links>li{width:100%;text-align:center;border-bottom:1px solid #252525}
-  .nav-links>li:first-child{border-top:1px solid #252525}
-  .nav-links>li>a{display:block;padding:18px 24px;font-size:.85rem;letter-spacing:.15em;color:#f0f0f0 !important}
-  .nav-links>li>a:hover{color:#d4af6a !important}
-  .has-dropdown>a::after{display:none}
-  .dropdown{position:static;transform:none;background:#0d0d0d;border:none;border-top:1px solid #252525;box-shadow:none;min-width:100%;width:100%}
-  .dropdown a{padding:14px 24px;font-size:.75rem;color:#808080 !important;text-align:center;display:block;border-bottom:1px solid #1a1a1a}
-  .dropdown a:last-child{border-bottom:none}
-  .dropdown a:hover{color:#d4af6a !important;background:rgba(212,175,106,.05)}
-  .nav-book{background:#d4af6a !important;color:#090909 !important;margin:24px auto 0;display:inline-block;width:auto;border-radius:2px}
-  .hamburger{display:flex;z-index:201}
   .footer-inner{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
 }
@@ -227,16 +223,18 @@ a:hover{color:inherit}
 <li class="has-dropdown">
 <a href="services.html">Services</a>
 <div class="dropdown">
-<a href="exterior-wash.html">Exterior Wash</a>
+<a href="exterior-wash.html">Decon Wash &amp; Wax</a>
 <a href="interior-detailing.html">Interior Detail</a>
 <a href="full-detail.html">Full Detail</a>
 <a href="paint-correction.html">Paint Correction</a>
 <a href="ceramic-coating.html">Ceramic Coating</a>
 </div>
 </li>
+<li><a href="maintenance-plans.html">Maintenance Plans</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="service-area.html">Service Area</a></li>
 <li><a href="contact.html">Contact</a></li>
+<li><a class="nav-book-online" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a></li>
 <li><a class="nav-book" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a></li>
 </ul>
 <button aria-label="Menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -249,12 +247,13 @@ a:hover{color:inherit}
 <button class="mob-services-toggle" id="mobServicesBtn" onclick="toggleServices()">Services</button>
 <div class="mob-services-sub" id="mobServicesSub">
 <a href="services.html">All Services</a>
-<a href="exterior-wash.html">Exterior Wash</a>
+<a href="exterior-wash.html">Decon Wash &amp; Wax</a>
 <a href="interior-detailing.html">Interior Detail</a>
 <a href="full-detail.html">Full Detail</a>
 <a href="paint-correction.html">Paint Correction</a>
 <a href="ceramic-coating.html">Ceramic Coating</a>
 </div>
+<a href="maintenance-plans.html">Maintenance Plans</a>
 <a href="about.html">About</a>
 <a href="service-area.html">Service Area</a>
 <a href="contact.html">Contact</a>
@@ -265,55 +264,37 @@ a:hover{color:inherit}
 <div style="position:relative;z-index:2;text-align:center">
 <p class="page-hero-eyebrow">Mobile Auto Detailing · Independence &amp; Manchester, IA</p>
 <h1 class="page-hero-title">Exterior<br/><span style="color:var(--gold)">Wash</span></h1>
-<p class="page-hero-sub">A thorough hand wash that makes your paint shine — starting at $80. We come to you.</p>
+<p class="page-hero-sub">Full decontamination wash, clay bar treatment, and 2-month spray wax. Starting at $130. We come to you.</p>
 <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px">
-<a class="btn-primary" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
+<a class="btn-outline" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
+<a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a>
 <a class="btn-outline" href="tel:3193277939">Call (319) 327-7939</a>
 </div>
 </div>
 </div>
 <section style="padding:80px 24px;background:var(--black)">
 <div class="section-inner" style="text-align:center;max-width:720px;margin:0 auto 60px">
-<p class="section-label">Exterior Wash Service</p>
+<p class="section-label">Decon Wash &amp; Wax</p>
 <h2 class="section-title">Hand Washed. Done Right.</h2>
 <div class="divider" style="margin:18px auto 24px"></div>
 <p style="color:var(--mid);line-height:1.8;margin-bottom:20px">Automatic car washes leave swirl marks and miss the details. Our hand wash service treats every panel with care, using proper techniques and professional products to clean your paint safely and thoroughly.</p>
-<p style="color:var(--mid);line-height:1.8;margin-bottom:32px">We clean and dress the wheels and tires, clean all windows inside and out, and wipe down door jambs and trim. Add our wax service for extra protection and a deeper shine that lasts weeks.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto">
-<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px;text-align:left">
-<div style="font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Exterior Wash</div>
-<div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:6px">From $80</div>
-<div style="font-size:.78rem;color:var(--mid);line-height:1.5">Hand wash, wheels, tires, windows &amp; door jambs</div>
-</div>
-<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px;text-align:left">
-<div style="font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Wax Add-On</div>
-<div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:6px">+$30</div>
-<div style="font-size:.78rem;color:var(--mid);line-height:1.5">Professional spray wax, 2–3 months protection</div>
-</div>
-<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px;text-align:left">
-<div style="font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Paint Decon Add-On</div>
-<div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:6px">+$30</div>
-<div style="font-size:.78rem;color:var(--mid);line-height:1.5">Removes bonded contaminants &amp; iron particles for silky smooth paint</div>
-</div>
-<div style="background:var(--card);border:1px solid var(--gold);padding:24px;text-align:left;position:relative">
-<span style="position:absolute;top:-1px;right:-1px;background:var(--gold);color:var(--black);font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:0 2px 0 2px">Best Value</span>
-<div style="font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:6px">Full Exterior Package</div>
-<div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:6px">From $130</div>
-<div style="font-size:.78rem;color:var(--mid);line-height:1.5">Wash + wax + paint decon — save $10</div>
-</div>
+<p style="color:var(--mid);line-height:1.8;margin-bottom:32px">We clean and dress the wheels and tires, clean all windows inside and out, and wipe down door jambs and trim. Our premium one-package exterior service includes everything — no add-ons, no surprises.</p>
+<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px;display:inline-block;text-align:left;min-width:280px">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold)">Starting at $130</div>
+<div style="font-size:.72rem;color:var(--mid);letter-spacing:.1em;text-transform:uppercase">Price varies by vehicle size</div>
 </div>
 </div>
 <div class="section-inner">
 <div style="text-align:center;margin-bottom:48px">
 <p class="section-label">What's Included</p>
-<h2 class="section-title">Every Exterior Wash Includes</h2>
+<h2 class="section-title">Every Decon Wash &amp; Wax Includes</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:var(--border);margin-bottom:80px">
-<div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🚿</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Hand Wash</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Every panel carefully hand washed using the two-bucket method to prevent swirl marks.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">💿</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Wheel &amp; Tire Cleaning</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Wheels scrubbed clean and tires dressed for a deep, rich black finish.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🪟</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Window Cleaning</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">All exterior glass cleaned streak-free for crystal-clear visibility.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🚪</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Door Jambs</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Door jambs wiped down — the detail most people miss.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">✨</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:4px">Wax Protection <span style="color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:1.1rem">— +$30</span></h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Professional spray wax applied for a deep, slick shine and up to 2–3 months of paint protection.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🧲</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:4px">Paint Decontamination <span style="color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:1.1rem">— +$30</span></h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Full decontamination treatment that removes bonded contaminants, brake dust, and embedded iron particles — leaving paint silky smooth and properly prepped.</p></div>
+<div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🚿</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Hand Wash</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Every panel carefully hand washed using the two-bucket method to prevent swirl marks.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">💿</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Wheel &amp; Tire Cleaning</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Wheels scrubbed clean and tires dressed for a deep, rich black finish.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🪟</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Window Cleaning</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">All exterior glass cleaned streak-free for crystal-clear visibility.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🚪</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Door Jambs</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Door jambs wiped down — the detail most people miss.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">✨</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">2-Month Spray Wax</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Professional spray wax applied for a deep, slick shine and up to 2 months of paint protection. Included with every service.</p></div><div style="background:var(--card);padding:28px"><div style="font-size:1.4rem;margin-bottom:10px">🧲</div><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Clay Bar Decontamination</h3><p style="font-size:.85rem;color:var(--mid);line-height:1.6">Full clay bar treatment that removes bonded contaminants, brake dust, and embedded iron particles — leaving paint silky smooth. Included with every service.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
-<div class="reveal"><img src="images/exterior-photo-1.jpg" alt="White Ford F-150 exterior wash" loading="lazy" style="width:100%;height:300px;object-fit:cover;object-position:center center;border-radius:4px;display:block"></div>
-<div class="reveal"><img alt="Chevy Silverado Trail Boss exterior wash" loading="lazy" src="images/exterior-gmc-front.jpg" style="width:100%;height:300px;object-fit:cover;object-position:center 58%;border-radius:4px;display:block"/></div>
+<div class="reveal"><img src="images/exterior-photo-1.jpg" alt="White Ford F-150 decon wash and wax" loading="lazy" style="width:100%;height:300px;object-fit:cover;object-position:center center;border-radius:4px;display:block"></div>
+<div class="reveal"><img alt="Chevy Silverado Trail Boss decon wash and wax" loading="lazy" src="images/exterior-gmc-front.jpg" style="width:100%;height:300px;object-fit:cover;object-position:center 58%;border-radius:4px;display:block"/></div>
 <div class="reveal"><img alt="Corvette foam wash" loading="lazy" src="images/exterior-photo-3.jpg" style="width:100%;height:300px;object-fit:cover;border-radius:4px;display:block"/></div>
 </div>
 </div>
@@ -339,7 +320,8 @@ a:hover{color:inherit}
 <h2 class="section-title">Get Your Vehicle Detailed Today</h2>
 <p style="color:var(--mid);max-width:500px;margin:0 auto 36px;font-size:1rem;line-height:1.7">We come to your home. All we need is a water spigot and an outlet.</p>
 <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-<a class="btn-primary" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
+<a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a>
+<a class="btn-outline" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
 <a class="btn-outline" href="tel:3193277939">Call (319) 327-7939</a>
 </div>
 </div>
@@ -361,11 +343,12 @@ a:hover{color:inherit}
 <div class="footer-col">
 <h4>Services</h4>
 <ul>
-<li><a href="exterior-wash.html">Exterior Wash</a></li>
+<li><a href="exterior-wash.html">Decon Wash &amp; Wax</a></li>
 <li><a href="interior-detailing.html">Interior Detail</a></li>
 <li><a href="full-detail.html">Full Detail</a></li>
 <li><a href="paint-correction.html">Paint Correction</a></li>
 <li><a href="ceramic-coating.html">Ceramic Coating</a></li>
+<li><a href="maintenance-plans.html">Maintenance Plans</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -431,7 +414,7 @@ a:hover{color:inherit}
       <label for="quote-service">Service Interested In</label>
       <select id="quote-service" name="service" required>
         <option value="" selected disabled>Select a service</option>
-        <option>Exterior Wash</option>
+        <option>Decon Wash &amp; Wax</option>
         <option>Interior Detail</option>
         <option>Full Detail</option>
         <option>Paint Correction</option>
