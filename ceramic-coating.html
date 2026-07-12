@@ -56,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 .dropdown a{display:block;padding:12px 20px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#808080;text-decoration:none;border-bottom:1px solid #252525}
 .dropdown a:last-child{border-bottom:none}
 .dropdown a:hover{color:#d4af6a;background:rgba(212,175,106,.05)}
-.has-dropdown:hover .dropdown{display:block}
+.has-dropdown:hover .dropdown{display:block}.has-dropdown::before{content:'';position:absolute;top:100%;left:0;right:0;height:12px}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:24px;height:2px;background:#f0f0f0;transition:transform .3s,opacity .3s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
