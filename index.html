@@ -83,6 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
   .hamburger{display:flex;z-index:501}
   .footer-inner{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .nav-logo img{height:56px!important}
 }
 @media(max-width:768px){
   .nav-inner{padding:14px 20px}
@@ -90,6 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
   .hamburger{display:flex;z-index:501}
   .footer-inner{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .nav-logo img{height:56px!important}
 }
 
 .btn-primary{background:var(--gold);color:var(--black);padding:14px 36px;font-family:'Barlow',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s,transform .2s;border:none;cursor:pointer;display:inline-block}
@@ -99,9 +101,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:#000000;border-bo
 
 @media(max-width:600px){
   .hero-title{text-shadow:none!important}
-  #heroCtaRow{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;width:100%!important;max-width:360px!important;margin:0 auto!important}
-  #heroCtaRow .btn-outline{padding:12px 8px!important;font-size:.68rem!important;letter-spacing:.05em!important;text-align:center!important;line-height:1.3!important}
-  #heroCtaBook{width:100%!important;max-width:360px!important}
+  #hero > div:last-child{padding-left:24px!important}
 }
 
 .section-inner{max-width:1100px;margin:0 auto}
@@ -212,6 +212,41 @@ a:hover{color:inherit}
 @media(min-width:769px){
   #hero{background-position:center 35%!important}
 }
+
+.service-card:hover{background:#1f1f1f!important}
+
+.rw-card{position:relative;display:block;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--border);text-decoration:none;transition:border-color .3s}
+.rw-card:hover{border-color:rgba(212,175,106,.4)}
+.rw-photo{position:absolute;inset:0;background-color:#0d0d0d;background-size:cover;background-position:center;transition:transform .5s}
+.rw-card:hover .rw-photo{transform:scale(1.05)}
+.rw-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,9,.05) 0%,rgba(9,9,9,.35) 55%,rgba(9,9,9,.92) 100%);pointer-events:none}
+.rw-text{position:absolute;bottom:0;left:0;right:0;padding:26px 24px;z-index:1}
+.rw-text h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.03em;color:#fff;margin-bottom:6px;text-transform:uppercase;transition:color .3s}
+.rw-card:hover .rw-text h3{color:var(--gold)}
+.rw-text p{font-family:'Barlow',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#d8d8d8;margin-bottom:18px}
+.rw-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.4);border-radius:24px;padding:9px 18px;transition:background .3s,border-color .3s,color .3s}
+.rw-card:hover .rw-btn{background:var(--gold);border-color:var(--gold);color:var(--black)}
+
+.google-review-card{background:#fff;border-radius:8px;padding:20px 22px;box-shadow:0 1px 2px rgba(0,0,0,.15),0 1px 4px rgba(0,0,0,.08)}
+.grc-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.grc-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Barlow',sans-serif;font-weight:600;font-size:1rem;flex-shrink:0}
+.grc-meta{flex:1;min-width:0}
+.grc-name{font-size:.86rem;font-weight:600;color:#202124;line-height:1.3}
+.grc-sub{font-size:.72rem;color:#70757a}
+.grc-logo{flex-shrink:0}
+.grc-stars{display:flex;align-items:center;gap:2px;margin-bottom:10px}
+.grc-time{font-size:.76rem;color:#70757a;margin-left:6px}
+.grc-text{font-size:.87rem;color:#3c4043;line-height:1.6}
+
+@media(max-width:900px){
+  .why-grid{grid-template-columns:1fr!important;gap:40px!important}
+  .services-grid{grid-template-columns:1fr!important}
+  .howitworks-line{display:none}
+  .service-area-grid{grid-template-columns:1fr!important;gap:36px!important}
+}
+@media(max-width:600px){
+  #how-it-works [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;gap:48px!important}
+}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any"/>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
@@ -260,7 +295,7 @@ a:hover{color:inherit}
 <body>
 <nav id="navbar">
 <div class="nav-inner">
-<a class="nav-logo" href="index.html" style="display:flex;align-items:center;padding:0"><img src="images/ks-logo.png" alt="KS Washing Mobile Detailing" style="height:72px;width:auto;display:block"/></a>
+<a class="nav-logo" href="index.html" style="display:flex;align-items:center;padding:0;background:transparent"><img src="images/ks-logo.png" alt="KS Washing Mobile Detailing" style="height:96px;width:auto;display:block;background:transparent;background-color:transparent;mix-blend-mode:normal"/></a>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li class="has-dropdown">
@@ -278,7 +313,7 @@ a:hover{color:inherit}
 <li><a href="service-area.html">Service Area</a></li>
 <li><a href="contact.html">Contact</a></li>
 <li><a class="nav-book-online" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a></li>
-<li><a class="nav-book" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a></li>
+<li><a class="nav-book" href="tel:3193277939">Call (319) 327-7939</a></li>
 </ul>
 <button aria-label="Menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
 <span></span><span></span><span></span>
@@ -300,102 +335,365 @@ a:hover{color:inherit}
 <a href="about.html">About</a>
 <a href="service-area.html">Service Area</a>
 <a href="contact.html">Contact</a>
-<a class="mob-book" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
+<a class="mob-book" href="tel:3193277939">Call (319) 327-7939</a>
 </div>
 </nav>
-<section id="hero" style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 80px;background:linear-gradient(rgba(9,9,9,.58),rgba(9,9,9,.84)), url('images/hero-gmc-sunset.jpg') center 40%/cover no-repeat;">
-<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 22%,rgba(212,175,106,.16) 0%,transparent 55%),linear-gradient(180deg,rgba(9,9,9,.12) 0%,rgba(9,9,9,.55) 100%)"></div>
-<div style="position:relative;z-index:2;max-width:860px;background:rgba(9,9,9,.34);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(2px);padding:36px 30px;border-radius:6px;box-shadow:0 18px 60px rgba(0,0,0,.28)">
-<p style="font-size:.7rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;opacity:0;animation:fadeUp .8s .2s forwards">Independence &amp; Manchester, Iowa</p>
-<h1 class="hero-title" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,10vw,8rem);letter-spacing:.05em;color:#ffffff;line-height:1;margin-bottom:24px;opacity:0;animation:fadeUp .8s .4s forwards;text-shadow:0 2px 12px rgba(0,0,0,0.9),0 0 40px rgba(0,0,0,0.8)">Mobile Auto<br/><span style="color:var(--gold)">Detailing</span></h1>
-<p style="font-size:1.05rem;color:#ffffff;max-width:620px;margin:0 auto 40px;line-height:1.7;opacity:0;animation:fadeUp .8s .6s forwards;text-shadow:0 1px 8px rgba(0,0,0,0.95)"><span style="display:block">Professional paint correction, ceramic coating, and mobile detailing</span><span style="display:block;margin-top:6px">Independence, Manchester, and surrounding areas</span><span style="display:block;margin-top:6px">⭐ 80+ 5-Star Reviews — Trusted Local Service</span></p>
-<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-<div id="heroCtaRow" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-<a class="btn-outline" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a>
+<section id="hero" style="min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:#000 url('images/hero-red-f350.jpg') 65% 55%/cover no-repeat;padding:140px 24px 90px">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,9,9,.92) 0%,rgba(9,9,9,.55) 42%,rgba(9,9,9,.15) 68%,rgba(9,9,9,.55) 100%),linear-gradient(0deg,rgba(9,9,9,.75) 0%,transparent 30%,transparent 70%,rgba(9,9,9,.4) 100%)"></div>
+<div style="position:relative;z-index:2;max-width:1300px;width:100%;margin:0 auto;padding-left:16vw">
+<p style="font-size:.68rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;opacity:0;animation:fadeUp .8s .2s forwards">Independence &amp; Manchester, Iowa</p>
+<h1 class="hero-title" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.4rem);letter-spacing:.02em;color:#ffffff;line-height:.98;margin-bottom:26px;opacity:0;animation:fadeUp .8s .4s forwards">Your Vehicle.<br/><span style="color:var(--gold)">Detailed Right.</span></h1>
+<p style="font-size:1.05rem;color:#ffffff;max-width:520px;margin-bottom:40px;line-height:1.75;opacity:0;animation:fadeUp .8s .6s forwards">Professional paint correction, ceramic coating, and mobile detailing that comes to your driveway in Independence, Manchester, and the surrounding area.</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;opacity:0;animation:fadeUp .8s .8s forwards">
+<a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a>
 <a class="btn-outline" href="tel:3193277939">Call (319) 327-7939</a>
 </div>
-<a id="heroCtaBook" class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank" style="padding:14px 60px">Book Online</a>
-</div>
-<div style="display:flex;gap:40px;justify-content:center;margin-top:56px;opacity:0;animation:fadeUp .8s 1s forwards;flex-wrap:wrap">
-<div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold)">5.0★</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)">Google Rating</div></div>
-<div style="width:1px;background:rgba(255,255,255,.18)"></div>
-<div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold)">80+</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)">Reviews</div></div>
-<div style="width:1px;background:rgba(255,255,255,.18)"></div>
-<div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold)">100%</div><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)">Mobile Service</div></div>
+<div style="display:flex;gap:40px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s 1s forwards">
+<div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.3rem;color:var(--gold);line-height:1">5.0★</div><div style="font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:#ffffff;margin-top:4px">Google Rating</div></div>
+<div style="width:1px;background:rgba(255,255,255,.25)"></div>
+<div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.3rem;color:var(--gold);line-height:1">100+</div><div style="font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:#ffffff;margin-top:4px">Reviews</div></div>
+<div style="width:1px;background:rgba(255,255,255,.25)"></div>
+<div><div style="font-family:'Bebas Neue',sans-serif;font-size:2.3rem;color:var(--gold);line-height:1">100%</div><div style="font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:#ffffff;margin-top:4px">Mobile Service</div></div>
 </div>
 </div>
 </section>
-<section style="padding:24px;background:linear-gradient(180deg,#0f0f0f 0%,#090909 100%);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
-<div class="section-inner" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;text-align:center">
-<div style="padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)">
-<div style="font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Mobile Convenience</div>
-<div style="font-size:.95rem;color:var(--white)">We come to you</div>
-</div>
-<div style="padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)">
-<div style="font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Quality First</div>
-<div style="font-size:.95rem;color:var(--white)">No rushed jobs. No cut corners.</div>
-</div>
-<div style="padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06)">
-<div style="font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Fast Responses</div>
-<div style="font-size:.95rem;color:var(--white)">Submit your request and we’ll get back to you ASAP</div>
-</div>
-</div>
-</section>
-<section style="padding:80px 24px;background:var(--black)">
-<div class="section-inner">
-<div style="text-align:center;margin-bottom:52px">
-<p class="section-label">Our Work</p>
-<h2 class="section-title">Recent Details</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
-<div class="reveal"><img alt="Blue Ford F-150 exterior detail" loading="lazy" src="images/gallery-blue-f150-front.jpg" style="width:100%;height:300px;object-fit:cover;display:block;border-radius:8px"/></div>
-<div class="reveal"><img alt="Green Dodge Challenger exterior detail" loading="lazy" src="images/gallery-challenger-green.jpg" style="width:100%;height:300px;object-fit:cover;display:block;border-radius:8px"/></div>
-<div class="reveal"><img alt="Challenger wheel and tire detail" loading="lazy" src="images/gallery-challenger-wheel.jpg" style="width:100%;height:300px;object-fit:cover;display:block;border-radius:8px"/></div>
-<div class="reveal"><img alt="GMC Sierra interior detail" loading="lazy" src="images/gallery-gmc-interior.jpg" style="width:100%;height:300px;object-fit:cover;display:block;border-radius:8px"/></div>
-<div class="reveal"><img alt="Ram truck interior detail" loading="lazy" src="images/gallery-ram-interior.jpg" style="width:100%;height:300px;object-fit:cover;display:block;border-radius:8px"/></div>
-<div class="reveal"><img alt="White GMC Sierra exterior detail" loading="lazy" src="images/hero-gmc-sunset.jpg" style="width:100%;height:300px;object-fit:cover;display:block;border-radius:8px"/></div>
-</div>
 
-</div></div>
+<!-- GALLERY: uniform square grid, no text overlays -->
+<section style="padding:100px 24px;background:var(--dark);border-top:1px solid var(--border)">
+<div class="section-inner">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px">
+<div>
+<p class="section-label">Our Work</p>
+<h2 class="section-title" style="margin-bottom:0">Recent Details</h2>
+</div>
+<p style="font-size:.88rem;color:var(--mid);max-width:320px;line-height:1.7">Every vehicle gets the same standard: real attention, no shortcuts.</p>
+</div>
+<div class="gallery-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+<div class="reveal" style="position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1">
+<img alt="White GMC Sierra exterior detail" loading="lazy" src="images/hero-gmc-sunset.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+</div>
+<div class="reveal" style="position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1">
+<img alt="Blue Ford F-150 exterior detail" loading="lazy" src="images/gallery-blue-f150-front.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+</div>
+<div class="reveal" style="position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1">
+<img alt="Green Dodge Challenger exterior detail" loading="lazy" src="images/gallery-challenger-green.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+</div>
+<div class="reveal" style="position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1">
+<img alt="Challenger wheel and tire detail" loading="lazy" src="images/gallery-challenger-wheel.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+</div>
+<div class="reveal" style="position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1">
+<img alt="GMC Sierra interior detail" loading="lazy" src="images/gallery-gmc-interior.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+</div>
+<div class="reveal" style="position:relative;overflow:hidden;border-radius:6px;aspect-ratio:1/1">
+<img alt="Ram truck interior detail" loading="lazy" src="images/gallery-ram-interior.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+</div>
+</div>
 </div>
 </section>
-<section style="padding:80px 24px;background:var(--dark)">
+
+<!-- HOW IT WORKS: replaces the flat 3-box strip with a connected horizontal flow -->
+
+<section id="how-it-works" style="padding:100px 24px;background:var(--black);position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,106,.4),transparent)"></div>
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:64px">
+<p class="section-label">How It Works</p>
+<h2 class="section-title">Three Steps. Zero Hassle.</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative">
+<div style="position:absolute;top:34px;left:16.5%;right:16.5%;height:1px;background:repeating-linear-gradient(90deg,rgba(212,175,106,.35) 0,rgba(212,175,106,.35) 8px,transparent 8px,transparent 16px)" class="howitworks-line"></div>
+<div class="reveal" style="text-align:center;padding:0 20px">
+<div style="width:68px;height:68px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 15l2.5 2.5L16 12"/></svg>
+</div>
+<h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--white);margin-bottom:10px">Book Online</h3>
+<p style="font-size:.88rem;color:var(--mid);line-height:1.7;max-width:260px;margin:0 auto">Pick a time that works and book in minutes. I'll confirm and get you on the schedule.</p>
+</div>
+<div class="reveal" style="text-align:center;padding:0 20px">
+<div style="width:68px;height:68px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M3 17V9a1 1 0 011-1h9l4 4v5"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></svg>
+</div>
+<h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--white);margin-bottom:10px">I Come To You</h3>
+<p style="font-size:.88rem;color:var(--mid);line-height:1.7;max-width:260px;margin:0 auto">Home, work, wherever your vehicle sits. Just a water spigot and an outlet.</p>
+</div>
+<div class="reveal" style="text-align:center;padding:0 20px">
+<div style="width:68px;height:68px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
+</div>
+<h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--white);margin-bottom:10px">Drive Away Impressed</h3>
+<p style="font-size:.88rem;color:var(--mid);line-height:1.7;max-width:260px;margin:0 auto">No rushed corners cut. If you're not satisfied, I'll make it right.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES: R&W-style cards, placeholder space for Kaleb's own photos, no visible pricing -->
+<section style="padding:100px 24px;background:var(--black)">
 <div class="section-inner">
 <div style="text-align:center;margin-bottom:56px">
 <p class="section-label">What We Do</p>
 <h2 class="section-title">Our Services</h2>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--border)">
-<a href="exterior-wash.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🚗</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $130</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Decon Wash &amp; Wax</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Hand wash, wheel cleaning, tire dressing, and window cleaning.</p></a>
-<a href="interior-detailing.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">✨</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $175</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Interior Detail</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Deep vacuum, carpet shampoo, stain removal, and odor elimination.</p></a>
-<a href="full-detail.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;position:relative;transition:border-color .2s"><div style="position:absolute;top:16px;right:16px;background:var(--gold);color:var(--black);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:1px">Best Value</div><div style="font-size:1.8rem;margin-bottom:14px">💎</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $235</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Full Detail</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Complete inside and out. Interior detail plus exterior hand wash.</p></a>
-<a href="paint-correction.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🔄</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $499</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Paint Correction</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Remove swirl marks, scratches, and oxidation.</p></a>
-<a href="ceramic-coating.html" onmouseout="this.style.borderBottomColor='transparent'" onmouseover="this.style.borderBottomColor='var(--gold)'" style="background:var(--card);padding:36px;text-decoration:none;display:block;border-bottom:2px solid transparent;transition:border-color .2s"><div style="font-size:1.8rem;margin-bottom:14px">🛡️</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Starting at $799</div><h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);margin-bottom:10px">Ceramic Coating</h3><p style="font-size:.88rem;color:var(--mid);line-height:1.65">Paint correction + Gyeon Mohs 3-year coating packages.</p></a>
+<div class="services-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+
+<a href="exterior-wash.html" class="rw-card">
+<div class="rw-photo" style="background-image:url('images/service-decon-wash.jpg')"></div>
+<div class="rw-text">
+<h3>Decon Wash &amp; Wax</h3>
+<p>Perfect safe wash, clay &amp; seal.</p>
+<span class="rw-btn">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</div>
+</a>
+
+<a href="interior-detailing.html" class="rw-card">
+<div class="rw-photo" style="background-image:url('images/service-interior-detail.jpg')"></div>
+<div class="rw-text">
+<h3>Interior Detail</h3>
+<p>Deep clean and reset.</p>
+<span class="rw-btn">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</div>
+</a>
+
+<a href="full-detail.html" class="rw-card">
+<div class="rw-photo" style="background-image:url('images/service-full-detail.jpg')"></div>
+<div class="rw-text">
+<h3>Full Detail</h3>
+<p>Inside and out, done right.</p>
+<span class="rw-btn">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</div>
+</a>
+
+<a href="paint-correction.html" class="rw-card">
+<div class="rw-photo" style="background-image:url('images/service-paint-correction.jpg')"></div>
+<div class="rw-text">
+<h3>Paint Correction</h3>
+<p>Flawless finish.</p>
+<span class="rw-btn">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</div>
+</a>
+
+<a href="ceramic-coating.html" class="rw-card">
+<div class="rw-photo" style="background-image:url('images/service-ceramic-coating.jpg')"></div>
+<div class="rw-text">
+<h3>Ceramic Coating</h3>
+<p>Years of protection and shine.</p>
+<span class="rw-btn">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</div>
+</a>
+
+<a href="maintenance-plans.html" class="rw-card">
+<div class="rw-photo" style="background-image:url('images/service-maintenance-plans.jpg')"></div>
+<div class="rw-text">
+<h3>Maintenance Plans</h3>
+<p>Stay clean, on schedule.</p>
+<span class="rw-btn">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</div>
+</a>
+
 </div>
 </div>
 </section>
-<section style="background:var(--black);padding:80px 24px;border-top:1px solid var(--border)">
+
+<!-- WHY CHOOSE US: asymmetric layout instead of 4 identical cards -->
+<section style="background:var(--dark);padding:100px 24px;border-top:1px solid var(--border)">
 <div class="section-inner">
-<div style="text-align:center;max-width:760px;margin:0 auto 48px">
+<div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center" class="why-grid">
+<div>
 <p class="section-label">Why Choose KS Washing</p>
 <h2 class="section-title">Detailing Done Right</h2>
-<div class="divider" style="margin:18px auto 24px"></div>
-<p style="color:var(--mid);line-height:1.8">We keep it simple: quality work, honest pricing, and service that comes directly to you.</p>
+<div class="divider"></div>
+<p style="color:var(--mid);line-height:1.8;margin-bottom:32px">We keep it simple: quality work, honest pricing, and service that comes directly to you.</p>
+<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:22px 24px">
+<p class="section-label" style="margin-bottom:6px">Simple Guarantee</p>
+<p style="color:var(--white);font-size:1rem;line-height:1.6">If you're not satisfied, I'll make it right.</p>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:28px">
-<div style="background:var(--card);border:1px solid var(--border);padding:24px"><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">We Come To You</h3><p style="font-size:.9rem;color:var(--mid);line-height:1.7">No waiting rooms or drop-offs. We detail your vehicle where it’s most convenient.</p></div>
-<div style="background:var(--card);border:1px solid var(--border);padding:24px"><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Detail-Focused Work</h3><p style="font-size:.9rem;color:var(--mid);line-height:1.7">Not rushed, not sloppy. Every service is done with real care and attention.</p></div>
-<div style="background:var(--card);border:1px solid var(--border);padding:24px"><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Honest Pricing</h3><p style="font-size:.9rem;color:var(--mid);line-height:1.7">Pricing is based on your vehicle’s size and condition, with no surprises.</p></div>
-<div style="background:var(--card);border:1px solid var(--border);padding:24px"><h3 style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:8px">Results That Last</h3><p style="font-size:.9rem;color:var(--mid);line-height:1.7">From maintenance details to correction and coating, the goal is lasting results.</p></div>
 </div>
-<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px;text-align:center">
-<p class="section-label" style="margin-bottom:8px">Simple Guarantee</p>
-<p style="color:var(--white);font-size:1rem;line-height:1.7">If you’re not satisfied, I’ll make it right.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)">
+<div class="reveal" style="background:var(--black);padding:28px 24px">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin-bottom:14px"><path d="M12 21s-7-5.2-9.5-9.6C.6 7.8 2.7 4 6.5 4c2 0 3.4 1 5.5 3.2C14.1 5 15.5 4 17.5 4c3.8 0 5.9 3.8 4 7.4C19 15.8 12 21 12 21z"/></svg>
+<h3 style="font-size:.98rem;font-weight:600;color:var(--white);margin-bottom:8px">We Come To You</h3>
+<p style="font-size:.85rem;color:var(--mid);line-height:1.65">No waiting rooms or drop-offs.</p>
+</div>
+<div class="reveal" style="background:var(--black);padding:28px 24px">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin-bottom:14px"><path d="M12 2l1.8 5.6H20l-4.8 3.5 1.8 5.6L12 13.2l-5 3.5 1.8-5.6L4 7.6h6.2z"/></svg>
+<h3 style="font-size:.98rem;font-weight:600;color:var(--white);margin-bottom:8px">Detail-Focused Work</h3>
+<p style="font-size:.85rem;color:var(--mid);line-height:1.65">Not rushed, not sloppy. Ever.</p>
+</div>
+<div class="reveal" style="background:var(--black);padding:28px 24px">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin-bottom:14px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+<h3 style="font-size:.98rem;font-weight:600;color:var(--white);margin-bottom:8px">Honest Pricing</h3>
+<p style="font-size:.85rem;color:var(--mid);line-height:1.65">Based on size and condition. No surprises.</p>
+</div>
+<div class="reveal" style="background:var(--black);padding:28px 24px">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin-bottom:14px"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+<h3 style="font-size:.98rem;font-weight:600;color:var(--white);margin-bottom:8px">Results That Last</h3>
+<p style="font-size:.85rem;color:var(--mid);line-height:1.65">From maintenance to correction and coating.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section style="background:var(--black);padding:80px 24px"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><p class="section-label">What Customers Say</p><h2 class="section-title">5.0 ★★★★★</h2><p style="color:var(--mid);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase">80+ Google Reviews · Independence, IA</p></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px"><div class="review-card reveal"><div class="review-stars">★★★★★</div><p class="review-text">KS Washing and Auto detailing came to my home and did an AMAZING job detailing my car. He was very professional and thorough. Great pricing and great to work with. I will be recommending him to anyone looking for detailing.</p><div class="review-author"><div class="review-avatar">KC</div><div><div class="review-name">Katherine Clinton</div><div class="review-date">Google Review · Independence, IA</div></div></div></div><div class="review-card reveal"><div class="review-stars">★★★★★</div><p class="review-text">KS Washing did an amazing job of detailing our Ford Edge! We were so impressed with the beautiful job Kaleb did that we have booked a second appointment! He has an impressive work ethic and excellent communication skills!</p><div class="review-author"><div class="review-avatar">DM</div><div><div class="review-name">Diane Meyer</div><div class="review-date">Google Review · Independence, IA</div></div></div></div><div class="review-card reveal"><div class="review-stars">★★★★★</div><p class="review-text">He did an amazing job on my SUV that hasn't been cleaned since I got it, 7 years. There is no sign of dog being in the car or children. Absolutely impeccable! Fairly priced and if he finds anything concerning he will let you know.</p><div class="review-author"><div class="review-avatar">HC</div><div><div class="review-name">Hana Celebic</div><div class="review-date">Google Review · Independence, IA</div></div></div></div></div><div style="text-align:center;margin-top:40px"><a class="btn-outline" href="https://share.google/4xKiAyokHw1ahY2xF" target="_blank">Read All 80+ Google Reviews</a></div></div></section>
-<section style="background:linear-gradient(135deg,#0f0f0f 0%,#1a1500 100%);padding:80px 24px;text-align:center;border-top:1px solid var(--border)"><div class="section-inner"><p class="section-label">Ready to Book?</p><h2 class="section-title">Get Your Vehicle Detailed Today</h2><p style="color:var(--mid);max-width:500px;margin:0 auto 36px;font-size:1rem;line-height:1.7">We come to you. All we need is a water spigot and an outlet.</p><div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap"><a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a><a class="btn-outline" href="#" onclick="openQuoteModal(); return false;">Get A Free Quote</a></div></div></section>
+
+<!-- SERVICE AREA: town list + embedded map -->
+<section style="background:var(--dark);padding:100px 24px;border-top:1px solid var(--border)">
+<div class="section-inner">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center" class="service-area-grid">
+<div>
+<p class="section-label">Where We Work</p>
+<h2 class="section-title">Serving Independence, Manchester &amp; Northeast Iowa</h2>
+<div class="divider"></div>
+<p style="color:var(--mid);line-height:1.8;margin-bottom:28px">Mobile detailing throughout Buchanan and Delaware County and the surrounding area. Not sure if you're in range? Call or text and I'll confirm your spot.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px">
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Independence, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Rowley, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Manchester, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Brandon, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Jesup, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Aurora, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Winthrop, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Urbana, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Quasqueton, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Center Point, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Hazleton, IA</div>
+<div style="font-size:.87rem;color:var(--white);padding:9px 0;border-bottom:1px solid var(--border)">Walker, IA</div>
+</div>
+<a href="service-area.html" class="btn-outline" style="margin-top:32px;display:inline-block">Full Service Area</a>
+</div>
+<div>
+<div id="serviceAreaMap" style="border-radius:6px;overflow:hidden;border:1px solid var(--border);height:420px;width:100%"></div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px">
+<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:var(--gold);display:inline-block"></span><span style="font-size:.78rem;color:var(--mid)">20 mi — no travel fee</span></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#6ba3ff;display:inline-block"></span><span style="font-size:.78rem;color:var(--mid)">20–30 mi — travel fee applies</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  function initServiceAreaMap(){
+    var center = [42.39417, -91.75389]; // Quasqueton, IA
+    var map = L.map('serviceAreaMap', {scrollWheelZoom:false}).setView(center, 9);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      maxZoom: 19
+    }).addTo(map);
+
+    // 20 mile radius - no travel fee (gold)
+    L.circle(center, {
+      radius: 20 * 1609.34,
+      color: '#d4af6a',
+      weight: 2,
+      fillColor: '#d4af6a',
+      fillOpacity: 0.12
+    }).addTo(map);
+
+    // 30 mile radius (20 + 10 extra) - travel fee applies (blue)
+    L.circle(center, {
+      radius: 30 * 1609.34,
+      color: '#6ba3ff',
+      weight: 2,
+      dashArray: '6 6',
+      fillColor: '#6ba3ff',
+      fillOpacity: 0.06
+    }).addTo(map);
+
+    L.circleMarker(center, {
+      radius: 5,
+      color: '#090909',
+      weight: 2,
+      fillColor: '#d4af6a',
+      fillOpacity: 1
+    }).addTo(map).bindPopup('Quasqueton, IA — service area center');
+  }
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(initServiceAreaMap, 0);
+  } else {
+    document.addEventListener('DOMContentLoaded', initServiceAreaMap);
+  }
+})();
+</script>
+
+<section style="background:var(--black);padding:100px 24px">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:52px">
+<p class="section-label">What Customers Say</p>
+<h2 class="section-title">5.0 ★★★★★</h2>
+<div style="display:inline-flex;align-items:center;gap:8px;margin-top:8px">
+<svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+<span style="font-size:.85rem;color:var(--mid);letter-spacing:.02em">100+ Google Reviews · Independence, IA</span>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+
+<div class="google-review-card reveal">
+<div class="grc-head">
+<div class="grc-avatar" style="background:#e8710a">K</div>
+<div class="grc-meta">
+<div class="grc-name">Katherine Clinton</div>
+<div class="grc-sub">Local Guide</div>
+</div>
+<svg class="grc-logo" width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+</div>
+<div class="grc-stars">
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<span class="grc-time">2 weeks ago</span>
+</div>
+<p class="grc-text">KS Washing and Auto detailing came to my home and did an AMAZING job detailing my car. He was very professional and thorough. Great pricing and great to work with. I will be recommending him to anyone looking for detailing.</p>
+</div>
+
+<div class="google-review-card reveal">
+<div class="grc-head">
+<div class="grc-avatar" style="background:#1a73e8">D</div>
+<div class="grc-meta">
+<div class="grc-name">Diane Meyer</div>
+<div class="grc-sub">5 reviews</div>
+</div>
+<svg class="grc-logo" width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+</div>
+<div class="grc-stars">
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<span class="grc-time">1 month ago</span>
+</div>
+<p class="grc-text">KS Washing did an amazing job of detailing our Ford Edge! We were so impressed with the beautiful job Kaleb did that we have booked a second appointment! He has an impressive work ethic and excellent communication skills!</p>
+</div>
+
+<div class="google-review-card reveal">
+<div class="grc-head">
+<div class="grc-avatar" style="background:#188038">H</div>
+<div class="grc-meta">
+<div class="grc-name">Hana Celebic</div>
+<div class="grc-sub">3 reviews</div>
+</div>
+<svg class="grc-logo" width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+</div>
+<div class="grc-stars">
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FBBC05" d="M12 17.3l-6.16 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.76 1.64 7.03z"/></svg>
+<span class="grc-time">1 month ago</span>
+</div>
+<p class="grc-text">He did an amazing job on my SUV that hasn't been cleaned since I got it, 7 years. There is no sign of dog being in the car or children. Absolutely impeccable! Fairly priced and if he finds anything concerning he will let you know.</p>
+</div>
+
+</div>
+<div style="text-align:center;margin-top:40px"><a class="btn-outline" href="https://share.google/4xKiAyokHw1ahY2xF" target="_blank">Read All 100+ Google Reviews</a></div>
+</div>
+</section>
+<section style="background:linear-gradient(135deg,#0f0f0f 0%,#1a1500 100%);padding:100px 24px;text-align:center;border-top:1px solid var(--border)"><div class="section-inner"><p class="section-label">Ready to Book?</p><h2 class="section-title">Get Your Vehicle Detailed Today</h2><p style="color:var(--mid);max-width:500px;margin:0 auto 36px;font-size:1rem;line-height:1.7">We come to you. All we need is a water spigot and an outlet.</p><div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap"><a class="btn-primary" href="https://book.sproutcoapp.com/mp8e81" target="_blank">Book Online</a><a class="btn-outline" href="tel:3193277939">Call (319) 327-7939</a></div></div></section>
 <footer>
 <div class="footer-inner">
 <div>
@@ -445,88 +743,9 @@ a:hover{color:inherit}
 <span class="footer-copy">Mobile Detailing · Paint Correction · Ceramic Coating</span>
 </div>
 </footer>
-<div aria-hidden="true" aria-labelledby="quoteModalTitle" class="quote-modal" id="quoteModal" role="dialog">
-<div class="quote-modal-panel" onclick="event.stopPropagation()">
-<div class="quote-modal-head">
-<div>
-<div class="quote-modal-kicker">Free Quote Request</div>
-<h2 class="quote-modal-title" id="quoteModalTitle">Get A Free Quote</h2>
-<p class="quote-modal-sub">Fill this out and I’ll get back to you with a quote ASAP. Weekend spots fill up fast.</p>
-</div>
-<button aria-label="Close quote form" class="quote-close" onclick="closeQuoteModal()" type="button">×</button>
-</div>
-<div class="quote-form-wrap">
-<form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="8303c592-64dc-482a-93ba-fa2055d9eae7">
-  <input type="hidden" name="subject" value="New Quote Request - KS Washing">
-  <input type="hidden" name="redirect" value="https://kswashing.com/thank-you.html">
-  
-  
 
-  <div class="quote-form-grid">
-    <div class="quote-field">
-      <label for="quote-name">Full Name</label>
-      <input id="quote-name" name="name" type="text" placeholder="Your name" required>
-    </div>
-    <div class="quote-field">
-      <label for="quote-phone">Phone Number</label>
-      <input id="quote-phone" name="phone" type="tel" placeholder="Best number to reach you" required>
-    </div>
-    <div class="quote-field">
-      <label for="quote-email">Email</label>
-      <input id="quote-email" name="email" type="email" placeholder="Optional">
-    </div>
-    <div class="quote-field">
-      <label for="quote-vehicle">Vehicle</label>
-      <input id="quote-vehicle" name="vehicle" type="text" placeholder="Year, make, model" required>
-    </div>
-    <div class="quote-field">
-      <label for="quote-service">Service Interested In</label>
-      <select id="quote-service" name="service" required>
-        <option value="" selected disabled>Select a service</option>
-        <option>Decon Wash &amp; Wax</option>
-        <option>Interior Detail</option>
-        <option>Full Detail</option>
-        <option>Paint Correction</option>
-        <option>Ceramic Coating</option>
-        <option>Not Sure Yet</option>
-      </select>
-    </div>
-    <div class="quote-field">
-      <label for="quote-location">Location</label>
-      <input id="quote-location" name="location" type="text" placeholder="Town / address area" required>
-    </div>
-    <div class="quote-field quote-field-full">
-      <label for="quote-message">Tell me about the vehicle and what you need</label>
-      <textarea id="quote-message" name="message" placeholder="Condition, size, any heavy staining, paint issues, and anything else I should know" required></textarea>
-    </div>
-  </div>
-
-  <div class="quote-form-note">
-    After you submit, you’ll be taken to a confirmation page and I’ll get back to you as soon as possible.
-  </div>
-
-  <button class="quote-submit" type="submit">Submit Quote Request</button>
-</form>
-</div>
-</div>
-</div>
 <script>
 
-function openQuoteModal(){
-  var modal=document.getElementById('quoteModal');
-  if(!modal) return;
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-}
-function closeQuoteModal(){
-  var modal=document.getElementById('quoteModal');
-  if(!modal) return;
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
-}
 
 
 function toggleFaq(btn){
@@ -569,13 +788,6 @@ document.addEventListener('click',function(e){
   }
 });
 
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') closeQuoteModal();
-});
-var quoteModal=document.getElementById('quoteModal');
-if(quoteModal){
-  quoteModal.addEventListener('click',function(){ closeQuoteModal(); });
-}
 
 window.addEventListener('scroll',function(){
   var p=window.scrollY>60?'10px 48px':'16px 48px';
